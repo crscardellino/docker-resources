@@ -1,1 +1,1 @@
-docker run -it --name base-container --net=host -v $PWD/mount:/ds crscardellino/base
+docker run -dit --name crscardellino-base --net=host -v $PWD:/ds crscardellino/base
