@@ -37,8 +37,14 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 ENV PATH /opt/conda/bin:$PATH
 
+# Extra libraries not available in anaconda
+RUN /opt/conda/bin/pip --no-cache-dir install --upgrade pip
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade keras
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade tensorflow
+RUN /opt/conda/bin/pip --no-cache-dir install --upgrade ggplot
+RUN /opt/conda/bin/pip --no-cache-dir install --upgrade pandasql
+RUN /opt/conda/bin/pip --no-cache-dir install --upgrade tqdm
+RUN /opt/conda/bin/pip --no-cache-dir install --upgrade ipdb
 
 # Open Ports for Jupyter
 EXPOSE 7698
