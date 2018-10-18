@@ -45,6 +45,8 @@ RUN /opt/conda/bin/pip --no-cache-dir install --upgrade ggplot
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade pandasql
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade tqdm
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade ipdb
+RUN /opt/conda/bin/pip --no-cache-dir install --upgrade jupyter_dashboards
+RUN /opt/conda/bin/jupyter dashboards quick-setup --sys-prefix
 
 # Open Ports for Jupyter
 EXPOSE 7698
