@@ -17,6 +17,7 @@ apt-get install -y bzip2 ca-certificates \
     pkg-config \
     python3-dev \
     python3-pip \
+    python-qt4 \
     python-setuptools \
     python-virtualenv \
     vim \
@@ -38,8 +39,8 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 ENV PATH /opt/conda/bin:$PATH
 
 # Extra libraries not available in anaconda
-RUN /opt/conda/bin/conda install tzlocal -y
-RUN /opt/conda/bin/conda install -c r r-tidyverse rpy2 -y
+RUN /opt/conda/bin/conda install -y tzlocal
+RUN /opt/conda/bin/conda install -y -c r r-tidyverse rpy2
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade pip
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade keras
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade tensorflow
