@@ -38,6 +38,8 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 ENV PATH /opt/conda/bin:$PATH
 
 # Extra libraries not available in anaconda
+RUN /opt/conda/bin/conda install tzlocal -y
+RUN /opt/conda/bin/conda install -c r r-tidyverse rpy2 -y
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade pip
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade keras
 RUN /opt/conda/bin/pip --no-cache-dir install --upgrade tensorflow
